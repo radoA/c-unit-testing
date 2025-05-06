@@ -1,0 +1,44 @@
+mkdir -p build/depends/
+mkdir -p build/objs/
+mkdir -p build/results/
+gcc -c -I. -Iunity/src/ -Isrc/ -DTEST src/calc/calc.c -o build/objs/calc.o
+gcc -c -I. -Iunity/src/ -Isrc/ -DTEST test/Testcalc.c -o build/objs/Testcalc.o
+gcc -c -I. -Iunity/src/ -Isrc/ -DTEST unity/src/unity.c -o build/objs/unity.o
+gcc -o build/Testcalc.out build/objs/Testcalc.o build/objs/calc.o build/objs/unity.o
+./build/Testcalc.out > build/results/Testcalc.txt 2>&1
+-----------------------
+IGNORES:
+-----------------------
+
+-----------------------
+FAILURES:
+-----------------------
+
+-----------------------
+PASSED:
+-----------------------
+test/Testcalc.c:126:test_add:PASS
+test/Testcalc.c:127:test_sub:PASS
+test/Testcalc.c:128:test_mul:PASS
+test/Testcalc.c:129:test_mul_overflow:PASS
+test/Testcalc.c:130:test_mul_underflow:PASS
+test/Testcalc.c:131:test_div:PASS
+test/Testcalc.c:132:test_mod:PASS
+test/Testcalc.c:133:test_power_two:PASS
+test/Testcalc.c:134:test_power_two_overflow:PASS
+test/Testcalc.c:135:test_power:PASS
+test/Testcalc.c:136:test_is_greater:PASS
+test/Testcalc.c:137:test_is_equal:PASS
+test/Testcalc.c:138:test_is_smaller:PASS
+test/Testcalc.c:139:test_fill_single_digit_positive_number:PASS
+test/Testcalc.c:140:test_true_as_string:PASS
+test/Testcalc.c:141:test_false_as_string:PASS
+
+DONE
+gcc -c -I. -Iunity/src/ -Isrc/ -DTEST src/main.c -o build/objs/main.o
+src/main.c:10:17: warning: invalid conversion specifier ' '
+      [-Wformat-invalid-specifier]
+        printf("'10 % 2 = %d'\n", mod(10, 2));
+                    ~~~^
+1 warning generated.
+gcc -o calc.out build/objs/main.o build/objs/calc.o
