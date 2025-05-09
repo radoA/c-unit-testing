@@ -53,7 +53,6 @@ c02:
 	gcc -Wall -Wextra -Werror -c -I. -Iunity/src/ -Isrc/ -DTEST test/TestC02.c -o build/objs/TestC02.o
 	gcc -o build/TestC02.out build/objs/TestC02.o build/objs/unity.o
 	./build/TestC02.out
-	cd src/C02; norminette `ls */*`
 
 clean:
 	rm -rf $(PATHO)*.o
