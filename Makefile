@@ -54,6 +54,10 @@ c02:
 	gcc -o build/TestC02.out build/objs/TestC02.o build/objs/unity.o
 	./build/TestC02.out
 
+c03:
+	make clean
+	gcc -c -I. -Iunity/src/ -Isrc/ -DTEST unity/src
+
 clean:
 	rm -rf $(PATHO)*.o
 	rm -rf $(PATHB)*.$(TARGET_EXTENSION)

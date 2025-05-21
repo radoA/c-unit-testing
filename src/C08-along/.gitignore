@@ -1,0 +1,4 @@
+*.out
+.DS_Store
+.vscode
+*/ft_stock_str.h

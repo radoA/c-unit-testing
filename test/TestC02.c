@@ -144,8 +144,8 @@ void	test_ft_strcapitalize_ex09(void)
 {
 	char	input_char[220] = "hi, how are you? 42words foRty-two; fifty+and+one";
 	char	output_char[220] = "Hi, How Are You? 42words Forty-Two; Fifty+And+One";
-	//char	test[220] = "HI, HOW ARE YOU? 42WORDS FORTY-TWO; FIFTY+AND+ONE";
-	//TEST_ASSERT_EQUAL_STRING(test, ft_st`rcapitalize(test));
+	char	test[220] = "HI, HOW ARE YOU? 42WORDS FORTY-TWO; FIFTY+AND+ONE";
+	TEST_ASSERT_EQUAL_STRING(test, ft_strcapitalize(test));
 	char	capital_input[50] = "HELLO";
 	char	capital_output[50] = "Hello";
 	TEST_ASSERT_EQUAL_STRING(output_char, ft_strcapitalize(input_char));
